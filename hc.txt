@@ -1,0 +1,35 @@
+import random
+choices = ['1', '2', '3','4','5','6','7','8','9','10']
+computer = random.choice(choices)
+player = False
+cpu_score = 0
+player_score = 0
+while True:
+    player=input("bat or bowl:")
+    if player =="bat":
+       player = int(input("1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 ?"))
+       if player == computer:
+           print("out")
+       else:
+          player_score+=player
+          print("your score: ",player_score)
+           
+    elif player =="bowl":
+       computer = int(random.choice(choices))
+       player=input("1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 ?")
+       if computer== player:
+           print("out")
+       else:
+          cpu_score+=computer
+          print("computer score: ",cpu_score)
+        
+      
+    elif player=='end':
+        print("Final Scores:")
+        print("CPU: ",cpu_score)
+        print("Player: ",player_score)
+        if  cpu_score>player_score:
+         print("cpu wins")
+        else:
+         print("you wins")
+        break
